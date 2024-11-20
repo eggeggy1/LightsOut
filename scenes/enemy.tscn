@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://sukoxnkwafqp"]
+
+[ext_resource type="Texture2D" uid="uid://ddy1blryb0w4j" path="res://assets/icon.svg" id="1_0u1su"]
+[ext_resource type="Script" path="res://scripts/Boss.gd" id="1_61xj8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky5ux"]
+size = Vector2(143, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmp0g"]
+size = Vector2(276, 258)
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_61xj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0u1su")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ky5ux")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Agro Range" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tmp0g")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="tree_entered" from="Area2D/Agro Range" to="." method="_on_agro_range_tree_entered"]
+[connection signal="tree_exited" from="Area2D/Agro Range" to="." method="_on_agro_range_tree_exited"]

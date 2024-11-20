@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct2e5i8p5xf5"]
+
+[ext_resource type="Texture2D" uid="uid://ddy1blryb0w4j" path="res://assets/icon.svg" id="1_822r3"]
+[ext_resource type="Script" path="res://objects/buttontuah.gd" id="1_v5eqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb8sw"]
+size = Vector2(32, 31)
+
+[node name="button2" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_v5eqw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tb8sw")
+disabled = true
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-0.0384331, -0.736572)
+rotation = 3.14159
+scale = Vector2(0.255264, 0.251784)
+texture = ExtResource("1_822r3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tb8sw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

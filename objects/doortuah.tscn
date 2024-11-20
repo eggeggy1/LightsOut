@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://mtre6y3ev3tk"]
+
+[ext_resource type="Script" path="res://objects/doortuah.gd" id="1_sunoq"]
+[ext_resource type="Texture2D" uid="uid://bgcftdwkoc4ee" path="res://assets/rock.png" id="2_iqy5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fronu"]
+size = Vector2(32, 31)
+
+[node name="door1" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_sunoq")
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+rotation = 0.71733
+scale = Vector2(0.151757, 0.0703125)
+texture = ExtResource("2_iqy5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_fronu")

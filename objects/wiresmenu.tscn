@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw34idlfruxw6"]
+
+[ext_resource type="Script" path="res://scenes/wiresmenu.gd" id="1_82507"]
+[ext_resource type="Texture2D" uid="uid://j1qmwn62vycx" path="res://assets/graytext.jpg" id="2_17di2"]
+[ext_resource type="Texture2D" uid="uid://cbtc3ths5dmtl" path="res://assets/redcircle.png" id="2_a78oa"]
+[ext_resource type="Script" path="res://objects/h_box_container.gd" id="2_yjj7x"]
+[ext_resource type="Texture2D" uid="uid://qbtyhi2vlyjy" path="res://assets/bluecircle.png" id="3_vkcod"]
+[ext_resource type="Texture2D" uid="uid://cyftr1sspwwyv" path="res://assets/greencircle.png" id="4_buwdr"]
+[ext_resource type="Texture2D" uid="uid://fonry6qhuk4l" path="res://assets/pinkcircle.png" id="5_sf1no"]
+
+[node name="wiresmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -202.0
+offset_top = -240.0
+offset_right = 201.0
+offset_bottom = 234.0
+script = ExtResource("1_82507")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 4.089
+anchor_bottom = 1.601
+offset_left = 111.0
+offset_top = -63.0
+offset_right = -1348.87
+offset_bottom = -444.874
+script = ExtResource("2_yjj7x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureLeftRed" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_a78oa")
+
+[node name="TextureLeftGreen" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_buwdr")
+
+[node name="TextureLeftPink" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_sf1no")
+
+[node name="TextureLeftBlue" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_vkcod")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_17di2")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRightRed" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_a78oa")
+
+[node name="TextureRightBlue" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("3_vkcod")
+
+[node name="TextureRightGreen" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("4_buwdr")
+
+[node name="TextureRightPink" type="TextureButton" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("5_sf1no")
